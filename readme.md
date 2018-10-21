@@ -4,6 +4,7 @@ Monitor TIG Stack With Docker
 - Grafana for visualization a logs or metrics
 - InfluxDB for storing logs or metrics
 - Telegraf for collect logs or metrics
+- NGINX for test logging metrics
 
 ### Getting Start
 - Run docker
