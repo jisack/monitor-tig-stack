@@ -27,3 +27,11 @@ services:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
+
+  nginx:
+    container_name: tig_nginx
+    build: ./nginx
+    volumes:
+      - ./nginx/data:/var/www/html
+    ports:
+      - 8000:80
