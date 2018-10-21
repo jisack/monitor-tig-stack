@@ -26,6 +26,7 @@ services:
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
       - /var/run/docker.sock:/var/run/docker.sock
+      - log-volume:/var/log/nginx
     restart: always
 
   nginx:
@@ -33,5 +34,10 @@ services:
     build: ./nginx
     volumes:
       - ./nginx/data:/var/www/html
+      - log-volume:/var/log/nginx
     ports:
       - 8000:80
+      - 8090:8090
+
+volumes:
+  log-volume:
